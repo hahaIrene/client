@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .calcite-box {
+    @apply border border-neutral shadow rounded-md bg-base-200;
+  }
+}
+
+body {
+  @apply w-screen h-[100dvh] overflow-hidden bg-cover bg-center bg-no-repeat;
+}
+
+main {
+  @apply p-16 overflow-auto flex w-[100dvw] h-[100dvh] items-center justify-center gap-8 bg-base-300;
+}
+
+.svg-light {
+  filter: invert(94%) sepia(12%) saturate(58%) hue-rotate(182deg)
+    brightness(101%) contrast(86%);
+}
+.svg-dark {
+  filter: invert(0%) sepia(6%) saturate(7475%) hue-rotate(284deg)
+    brightness(94%) contrast(106%);
+}
+
+.progress {
+  animation: progress 1s infinite linear;
+}
+
+.left-right {
+  transform-origin: 0% 50%;
+}
+@keyframes progress {
+  0% {
+    transform: translateX(-20%) scaleX(0.2);
+  }
+  50% {
+    transform: translateX(40%) scaleX(0.3);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0.4);
+  }
+}
+
+.reverse-progress {
+  animation: reverse-progress 2.5s linear forwards;
+}
+@keyframes reverse-progress {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #242627;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #242627;
+}
